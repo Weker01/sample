@@ -1,0 +1,5 @@
+CC = g++
+CFLAGS += -Wall
+CFLAGS += -Iinc/
+: foreach src/*.cpp |> $(CC) $(CFLAGS) -c %f -o %o |> src/%B.o
+: src/*.o |> g++ %f -o %o |> bin/exe
